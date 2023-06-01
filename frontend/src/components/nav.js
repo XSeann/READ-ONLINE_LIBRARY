@@ -87,6 +87,16 @@ const Nav = () => {
       }
     }
 
+    const showFDiv = () => {
+      filter.focusSearch.setShowFormDiv(true)
+    }
+
+    const unShowFDiv = () => {
+      if(filter.focusSearch.MFormDiv === false) {
+        filter.focusSearch.setShowFormDiv(false)
+      }
+    }
+
     return(
         <div id="nav">
             <Link to='/'></Link>
@@ -126,7 +136,7 @@ const Nav = () => {
                 <div id='searchBar'>
                   <span></span>
                   <span onClick={searchNow}></span>
-                  <input type='text' placeholder='Search Thesis or Capstone' onChange={searchText}/>
+                  <input type='text' placeholder='Search Thesis or Capstone' onChange={searchText} ref={filter.focusSearch.refFoc} onFocus={showFDiv} onBlur={unShowFDiv} autoFocus={filter.focusSearch.MFormDiv === false}/>
                 </div>
               </div>: <div></div>
             }

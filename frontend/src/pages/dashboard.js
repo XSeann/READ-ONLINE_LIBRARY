@@ -101,7 +101,7 @@ const Dashboard = () => {
                             {allPdf.length > 0 && pdfArr2[page2].map(data => 
                             <div>
                                 <p>{data.title}</p>
-                                <div><Link to={`/pdfViewAdminDelete/${data._id}`}>DELETE</Link></div>
+                                <div><Link to={`/pdfViewAdminDelete/${data._id}`}>VIEW</Link></div>
                             </div>)}
                         </div>
                     </div>

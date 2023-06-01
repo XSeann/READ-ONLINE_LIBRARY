@@ -167,15 +167,20 @@ a {
 }
 
 /*Library*/
+#library {
+  grid-template-rows: 3% 97%;
+}
 
 #pdfCollection {
   grid-template-columns: 31% 31% 31%;
   grid-template-rows: 50% 50% 50% 50% 50% 50% 50%;
   justify-content: center;
   gap: 4vh 10px;
+  position: relative;
+  z-index: 0;
   overflow-y: scroll;
   height: 100%;
-  padding: 70px 0 30px 0;
+  padding: 10px 0 30px 0;
 }
 
 #bookCard {
@@ -204,7 +209,7 @@ a {
 .preview > p, .preview > p > span {
   display: grid;
   align-items: center;
-  font-size: xx-small;
+  font-size: 6px;
   text-align: center;
   margin: 0;
   overflow: hidden;
@@ -248,6 +253,8 @@ a {
 }
 
 .linkDetail {
+  display: grid;
+  align-items: center;
   position: relative;
   left: 20%;
   background: #fff;
@@ -613,12 +620,11 @@ a {
 
 #pdfDetails > h1 {
   text-align: center;
-  overflow-x: scroll;
-  user-select: none;
 }
 
 #pdfDetails > h4:nth-of-type(3) {
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 #pdfDetails > span {
@@ -844,7 +850,7 @@ a {
 }
 
 #dashboardSub2 > div > div > div:nth-of-type(2) {
-  grid-template-columns: 50%;
+  grid-template-columns: 70%;
   grid-template-rows: 20% 20% 20% 20% 20%;
   justify-content: center;
   text-align: center;
@@ -857,7 +863,7 @@ a {
 #dashboardSub2 > div > div > div:nth-of-type(2) > div > p {
   display: grid;
   align-items: center;
-  font-size: larger;
+  font-size: x-small;
   font-weight: 700;
   margin: 0;
 }
@@ -972,6 +978,42 @@ a {
   font-size: larger;
   height: 70%;
   text-align: center;
+}
+
+#searchDivNav {
+  grid-template-columns: 5% 65% 25% 5%;
+  position: relative;
+  z-index: 1;
+}
+
+#searchDiv {
+  grid-template-columns: 33% 33% 33%;
+}
+
+#searchDiv > div {
+  grid-template-columns: 10% 15% 75%;
+}
+
+#searchDiv > div > div {
+  grid-template-rows: 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20% 20%;
+  background: #222;
+  border: 1px solid #000;
+  height: 40vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#searchDiv > div > div::-webkit-scrollbar {width: 2px !important;}
+
+#searchDiv > div > div > div {
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+#searchDiv > div > div > div > a {
+  color: #fff;
+  font-size: x-small;
+  padding: 5px;
 }
 
 #delete:hover{background: #fff;}

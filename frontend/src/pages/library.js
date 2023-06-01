@@ -254,10 +254,46 @@ const Library = () => {
     
     if(filter.callSearch.call) {searchFunc()}
 
+    if(inp === '') {searchData.current = []}
+
     const noRes = searchData.current.length === 1 && searchData.current[0].length === 0
 
+    const MFDiv = () => {
+        filter.focusSearch.setMFormDiv(true)
+    }
+  
+    const unMFDiv = () => {
+        filter.focusSearch.setMFormDiv(false)
+    }
+  
+    const refFocus = () => {
+        filter.focusSearch.refFoc.current.focus()
+    }
+    
     return(
         <div id="library">
+            <div id="searchDivNav">
+                <span></span>
+                <div id="searchDiv">
+                    <span></span>
+                    <span></span>
+                    <div>
+                        <span></span>
+                        <span></span>
+                        {(layer[1][0].length !== 0 && filter.focusSearch.showFormDiv) && 
+                        <div onTouchStart={MFDiv} onTouchEnd={refFocus} onMouseOver={MFDiv} onMouseOut={unMFDiv} onClick={refFocus}>
+                            {layer[1][0].map(fileData => 
+                            <div key={fileData[6]}>
+                                <Link to={`/pdfView/${fileData[6]}`}>
+                                    {fileData[0]}{fileData[1]}{fileData[2]}
+                                </Link>
+                            </div>)}
+                        </div>}
+                    </div>
+                </div>
+                <span></span>
+                <span></span>
+            </div>
             {(pdfArr[0].length === 0 && searchData.current.length === 0) && 
             <div id="pdfCollection">
                 {pdfArr[0].length === 0 && <Spinner animation="border" variant="light" className="loadingSpin3"/>}
@@ -306,7 +342,7 @@ const Library = () => {
                     </div>
                 </div>)}
 
-                {noRes && <div id="noRes"></div>}{noRes && <div id="noRes">"No Results"</div>}{noRes && <div id="noRes"></div>}
+                {(noRes && inp !== '') && <div id="noRes"></div>}{(noRes && inp !== '') && <div id="noRes">"No Results"</div>}{(noRes && inp !== '') && <div id="noRes"></div>}
 
             </div>}
         </div>
