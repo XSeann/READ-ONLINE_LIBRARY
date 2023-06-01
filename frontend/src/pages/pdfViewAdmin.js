@@ -19,7 +19,7 @@ const PdfViewAdmin = () => {
 
     useEffect(() => {
         const getOneData = async () => {
-            const response = await fetch(`http://localhost:7000/api/file/${id}`)
+            const response = await fetch(`https://read-online-library-web.onrender.com/api/file/${id}`)
             const json = await response.json()
             setOneFile(json)
         }
@@ -29,7 +29,7 @@ const PdfViewAdmin = () => {
         const approved = true
         const ApprovePdf = async () => {
             setDisable(true)
-            const response = await fetch(`http://localhost:7000/api/file/${id}`,{
+            const response = await fetch(`https://read-online-library-web.onrender.com/api/file/${id}`,{
                 method: 'PATCH',
                 body: JSON.stringify({approved}),
                 headers: {'Content-Type': 'application/json'}
@@ -49,7 +49,7 @@ const PdfViewAdmin = () => {
 
         const deletePdf = async () => {
             setDisable(true)
-            const response = await fetch(`http://localhost:7000/api/file/${id}`, {
+            const response = await fetch(`https://read-online-library-web.onrender.com/api/file/${id}`, {
                 method: 'DELETE'
             })
             

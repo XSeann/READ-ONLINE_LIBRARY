@@ -15,7 +15,7 @@ const Library = () => {
 
     useEffect(() => {
         const getAllFiles = async () => {
-            const response = await fetch('http://localhost:7000/api/file')
+            const response = await fetch('https://read-online-library-web.onrender.com/api/file')
 
             const json = await response.json()
             
@@ -258,7 +258,7 @@ const Library = () => {
 
     return(
         <div id="library">
-            {pdfArr[0].length === 0 && 
+            {(pdfArr[0].length === 0 && searchData.current.length === 0) && 
             <div id="pdfCollection">
                 {pdfArr[0].length === 0 && <Spinner animation="border" variant="light" className="loadingSpin3"/>}
                 {pdfArr[0].length === 0 && <Spinner animation="border" variant="light" className="loadingSpin3"/>}

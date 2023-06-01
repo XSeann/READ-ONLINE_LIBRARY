@@ -21,16 +21,16 @@ const PdfViewAdminDelete = () => {
 
     useEffect(() => {
         const getOneData = async () => {
-            const response = await fetch(`http://localhost:7000/api/file/${id}`)
+            const response = await fetch(`https://read-online-library-web.onrender.com/api/file/${id}`)
             const json = await response.json()
             setOneFile(json)
         }
         getOneData()
-    }, [refresh])
+    }, [])
 
     const deletePdf = async () => {
         setDisable(true)
-        const response = await fetch(`http://localhost:7000/api/file/${id}`, {
+        const response = await fetch(`https://read-online-library-web.onrender.com/api/file/${id}`, {
             method: 'DELETE'
         })
         
@@ -100,7 +100,7 @@ const PdfViewAdminDelete = () => {
                             </Dropdown>}
                             {(oneFile !== '' && delPdf === '' && refresh === '') &&<Button variant="danger" id='delete' onClick={() => setDelPdf(id)}>DELETE</Button>}
                             {refresh !== '' && <Link to='/dashboard' id='delete'>Go Back</Link>}
-                            {delPdf === oneFile._id && 
+                            {(delPdf === oneFile._id && refresh === '') && 
                             <div id="assurance">
                                 <p>Warning: Are you sure you want to DELETE this Pdf?</p>
                                 <div>

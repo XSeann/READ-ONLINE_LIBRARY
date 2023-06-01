@@ -10,7 +10,7 @@ export const useViews = () => {
     }
 
     const updateViews = async () => {
-        const response = await fetch(`http://localhost:7000/api/file/${id}`, {
+        const response = await fetch(`https://read-online-library-web.onrender.com/api/file/${id}`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ views })

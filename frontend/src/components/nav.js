@@ -32,7 +32,7 @@ const Nav = () => {
 
     useEffect(() => {
       const getUsers = async () => {
-          const response = await fetch('http://localhost:7000/api/user/users')
+          const response = await fetch('https://read-online-library-web.onrender.com/api/user/users')
           const json = await response.json()
   
           setUsers(json)

@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const getPdf = async () => {
-            const response = await fetch('http://localhost:7000/api/file')
+            const response = await fetch('https://read-online-library-web.onrender.com/api/file')
             const json = await response.json()
             setAllPdf(json)
         }

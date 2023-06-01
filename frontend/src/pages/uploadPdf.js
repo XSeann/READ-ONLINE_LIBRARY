@@ -50,7 +50,7 @@ const UploadPdf = () => {
     const uploadFile = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        const response = await fetch('http://localhost:7000/api/file', {
+        const response = await fetch('https://read-online-library-web.onrender.com/api/file', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({title, strand, year, authors, pdf: file})
@@ -74,10 +74,10 @@ const UploadPdf = () => {
             setError('')
             setSubmitErr([])
             setIsLoading(false)
-            alert('Your File has been uploaded. Thank You!')
+            alert('Your File will be check first before it will be uploaded. Thank You!')
         }
     }
-    
+
     const dragStyle = {backgroundColor: 'green', fontSize: '2.5em', fontWeight: 'bold'}
 
     return(
@@ -87,7 +87,7 @@ const UploadPdf = () => {
                 <div id="uploadDetails">
                     <span></span>
                     <p>UPLOAD PDF</p>
-                    <form onSubmit={uploadFile}>
+                    <form onSubmit={uploadFile} disabled={isLoading}>
                         <span>TITLE: <input type='text' placeholder='Title Here...' onChange={e => setTitle(e.target.value)} value={title}/></span>
                         <span>
                             STRAND:
@@ -128,7 +128,7 @@ const UploadPdf = () => {
                         </span>
                        
                         <span>AUTHOR: <textarea placeholder='Author Here...' onChange={e => setAuthors(e.target.value)} value={author}/></span>
-                        <button>Publish</button>
+                        <button disabled={isLoading}>Publish</button>
                     </form>
                 </div>
                 <div id="uploadFile">

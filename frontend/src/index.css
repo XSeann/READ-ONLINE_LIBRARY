@@ -207,6 +207,7 @@ a {
   font-size: xx-small;
   text-align: center;
   margin: 0;
+  overflow: hidden;
 }
 
 .titlePrev {
@@ -612,6 +613,12 @@ a {
 
 #pdfDetails > h1 {
   text-align: center;
+  overflow-x: scroll;
+  user-select: none;
+}
+
+#pdfDetails > h4:nth-of-type(3) {
+  overflow-x: scroll;
 }
 
 #pdfDetails > span {
