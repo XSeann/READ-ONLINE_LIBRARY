@@ -1,0 +1,1005 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {margin: 0; height: 100%;}
+
+div {display: grid;}
+
+#root, .App {height: 100%; overflow: hidden;}
+
+.App {
+  background: url('./pages/backgrounds/image\ 21.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+::-webkit-scrollbar {height: 5px; width: 5px;}
+
+::-webkit-scrollbar-thumb {background: #222; border-radius: 10px;}
+
+::-webkit-scrollbar-corner {background: transparent;}
+
+.error {
+  font-weight: bold;
+  animation: warning 3s infinite;
+}
+
+@keyframes warning {
+  0%{color: #aaa;}
+  100%{color: #ff0000;}
+}
+
+
+a {
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 1400px) {
+  #uploadDetails > p {font-size: 3em !important;}
+  #uploadFile > label > div > p {font-size: larger !important;}
+}
+
+@media screen and (max-width: 1000px) {
+  #pdfCollection {grid-template-columns: 48% 48% !important;}
+  #uploadPdfSub2 {grid-template-columns: 100% !important; grid-template-rows: 100% 100%; justify-content: center; overflow-y: scroll;}
+}
+
+@media screen and (max-width: 800px) {
+  #overviewPdfView {grid-template-columns: 90% !important; grid-template-rows: 150% 100%; justify-content: center; overflow-y: scroll;}
+  #overviewPdfViewAdmin {grid-template-columns: 100% !important; grid-template-rows: 100% 140%; justify-content: center; overflow-y: scroll;}
+  #overviewPdfView > canvas.PDF, #overviewPdfViewAdmin > canvas.PDF {height: 90% !important;}
+  #mainPdfView, #mainPdfView {grid-template-columns: 3% 15% 64% 15% 3% !important;}
+  #dashBContents {grid-template-columns: 96% !important; grid-template-rows: 1% 100% 10% 100% 1%; justify-content: center; overflow-y: scroll;}
+}
+
+@media screen and (max-width: 700px) {
+  #filterStrand > button:nth-of-type(1), #filterYear > button:nth-of-type(1) {font-size: large !important;}
+  #studentName {font-size: x-small !important;}
+  #pdfCollection {grid-template-columns: 96% !important;}
+  .title {font-size: large !important;}
+}
+
+/*Login*/
+#LoginBg {
+  grid-template-columns: 80%;
+  grid-template-rows: 80% 80.6%;
+  justify-content: center;
+  background-image: url('./pages/backgrounds/image\ 20.png');
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+}
+
+#insideBg {
+  position: relative;
+  top: 10%;
+  background: linear-gradient(0deg, rgba(251, 230, 230, 0.2), rgba(251, 230, 230, 0.2)), #D9D9D9;
+  mix-blend-mode: luminosity;
+  box-shadow: 20px 20px 4px rgba(46, 33, 33, 0.27);
+  border-radius: 30px;
+  height: 100%;
+}
+
+#libraryLoginBg {
+  grid-template-columns: 55% 45%;
+  position: relative;
+  bottom: 90.1%;
+  background: url('./pages/backgrounds/Rectangle\ 50.png');
+  background-repeat: no-repeat;
+  background-size: 65% 100%;
+  overflow: hidden;
+}
+
+#libraryLoginBg > div:nth-of-type(1) {
+  position: relative;
+  background: url('./pages/backgrounds/Sabog\ 1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  animation: imageMove 1s linear 1;
+}
+
+@keyframes imageMove {
+  0% {left: -500px;}
+  100% {left: 0;}
+}
+
+#libraryLoginBg > div:nth-of-type(2) {
+  grid-template-rows: 33% 33% 33%;
+  animation: opac 2s linear 1;
+}
+
+@keyframes opac {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#libraryLoginBg > div:nth-of-type(2) > div:nth-of-type(2) {
+  grid-template-columns: 80%;
+  grid-template-rows: 33% 33% 33%;
+  justify-content: center;
+  user-select: none;
+}
+
+
+#libraryLoginBg > div:nth-of-type(2) > div > h1 {
+  color: #012F7D;
+  font-size: 4em;
+  margin: 0;
+  mix-blend-mode: normal;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#libraryLoginBg > div:nth-of-type(2) > div > p {
+  color: #033D87;
+  mix-blend-mode: darken;
+  opacity: 0.5;
+  margin: 0;
+  text-align: center;
+}
+
+#libraryLoginBg > div:nth-of-type(2) > div > div {
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  background: #033E8A;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: large;
+  padding: 10px;
+}
+
+#libraryLoginBg > div:nth-of-type(2) > div > div:hover {
+  background: #222;
+}
+
+#libraryLoginBg > div:nth-of-type(2) > div > div > p {
+  height: 150%;
+  background: url('./pages/backgrounds/image_2023-05-28_160824605-removebg-preview\ 1.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  margin: 0;
+}
+
+/*Library*/
+
+#pdfCollection {
+  grid-template-columns: 31% 31% 31%;
+  grid-template-rows: 50% 50% 50% 50% 50% 50% 50%;
+  justify-content: center;
+  gap: 4vh 10px;
+  overflow-y: scroll;
+  height: 100%;
+  padding: 70px 0 30px 0;
+}
+
+#bookCard {
+  grid-template-columns: 55% 45%;
+  grid-template-rows: 115%;
+  border-radius: 20px;
+  height: 33vh;
+  padding: 0 10px 10px 10px;
+}
+
+.preview {
+  grid-template-columns: 98%;
+  grid-template-rows: 10% 30% 58%;
+  justify-content: center;
+  position: relative;
+  top: 30px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 20px 0;
+  user-select: none;
+  animation: preview 1s 1 linear;
+}
+
+.preview > p, .preview > p > span {
+  display: grid;
+  align-items: center;
+  font-size: xx-small;
+  text-align: center;
+  margin: 0;
+}
+
+.titlePrev {
+  font-weight: bold;
+}
+
+.titlePrev > p {
+  margin: 0;
+}
+
+.titlePrev > p > b {
+  font-size: small;
+}
+
+.details {
+  grid-template-rows: 75% 25%;
+  position: relative;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  animation: details 1s 1 linear;
+}
+
+.details > div:nth-of-type(1) {justify-content: center;}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.subDetails {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  justify-content: center;
+}
+
+.subDetails > span:nth-of-type(2) {
+  border-left: 1px solid #eee;
+}
+
+.linkDetail {
+  position: relative;
+  left: 20%;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  color: #A5D7E8 !important;
+  width: 60%;
+}
+
+.linkDetail:hover {
+  background: #000;
+  color: #eee !important;
+}
+
+.bookCard-ICT {background: linear-gradient(180deg, #A4E27D 42.71%, rgba(164, 226, 125, 0) 100%);}
+
+.bookCard-ABM {background: linear-gradient(180deg, #D064F6 47.4%, rgba(224, 162, 245, 0) 100%);}
+
+.bookCard-STEM {background: linear-gradient(180deg, #FFCC58 36.46%, rgba(239, 196, 132, 0) 100%, rgba(199, 124, 13, 0) 100%);}
+
+.bookCard-HUMMS {background: linear-gradient(180deg, #E1CF8D 41.67%, rgba(251, 219, 109, 0) 100%);}
+
+.bookCard-CA {background: linear-gradient(180deg, #FFBDBD 47.4%, rgba(224, 162, 245, 0) 100%);}
+
+.bookCard-TO {background: linear-gradient(180deg, #F34343 36.46%, rgba(239, 196, 132, 0) 100%, rgba(199, 124, 13, 0) 100%);}
+
+#noRes {
+  position: relative;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*Navbar*/
+#nav {
+  grid-template-columns: 5% 65% 25% 5%;
+  padding: 5px;
+}
+
+#nav > a {
+  background: url('./pages/backgrounds/Sabog\ 1.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#libraryDropAndSearch {
+  grid-template-columns: 33% 33% 33%;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+#filterStrand, #filterYear {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+}
+
+#filterStrand > button, #filterYear > button {
+  background: transparent;
+  border: transparent;
+  color: #03244D;
+  height: 65%;
+}
+
+#filterStrand > div, #filterYear > div {
+  padding: 0;
+}
+
+#filterStrand > div > a, #filterYear > div > a {
+  border-bottom: 1px solid #000;
+  color: #000;
+  font-size: larger;
+  font-weight: 500;
+  text-align: center;
+}
+
+#filterStrand > button::after, #filterYear > button::after {
+  color: transparent;
+}
+
+#filterStrand > button:nth-of-type(1), #filterYear > button:nth-of-type(1) {
+  cursor: default;
+  font-size: xx-large;
+  padding: 0;
+}
+
+#filterStrand > button:nth-of-type(2), #filterYear > button:nth-of-type(2) {
+  background: url('./pages/backgrounds/pngwing\ 3.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  border-right: 1px solid #03244D;
+  border-radius: 0;
+}
+
+#searchBar {
+  grid-template-columns: 10% 15% 75%;
+}
+
+#searchBar > span:nth-of-type(2) {
+  background: url('./pages/backgrounds/image_2023-05-28_001007707-removebg-preview\ 2.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+#searchBar > span:nth-of-type(2):hover {
+  background: rgba(247, 247, 247, 0.5);
+  border-radius: 100%;
+  height: 90%;
+}
+
+#searchBar > input {
+  background: transparent;
+  border: 0;
+  font-size: large;
+  font-weight: 400;
+}
+
+#searchBar > input::placeholder {
+  color: #03244D;
+}
+
+#studentName {
+  display: grid;
+  justify-content: end;
+  align-items: center;
+}
+
+#nav > div:nth-of-type(2) > div > a,  #nav > div:nth-of-type(1) > div > a{
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+#dropdown-split {
+  background: url('./pages/backgrounds/menu\ 1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  border: transparent;
+}
+
+#dropdown-split::after {
+  color: transparent;
+}
+
+#libraryIconMenu {background: url('./pages/backgrounds/output-onlinepngtools\ \(2\)\ 1.png');}
+
+#upPdfIconMenu {background: url('./pages/backgrounds/output-onlinepngtools\ 1.png');}
+
+#adminDashboard {background: url('./pages/backgrounds/dashboard\ 1.png');}
+
+#logOutIconMenu {background: url('./pages/backgrounds/output-onlinepngtools\ \(1\)\ 1.png');}
+
+#libraryIconMenu, #upPdfIconMenu, #adminDashboard, #logOutIconMenu {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*Upload Pdf*/
+
+#uploadPdf {
+  grid-template-columns: 85%;
+  grid-template-rows: 90% 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+#uploadPdfSub {
+  background: linear-gradient(0deg, rgba(251, 230, 230, 0.2), rgba(251, 230, 230, 0.2)), #D9D9D9;
+  mix-blend-mode: luminosity;
+  box-shadow: 20px 20px 4px rgba(46, 33, 33, 0.27);
+  border-radius: 30px;
+  height: 100%;
+}
+
+#uploadPdfSub2 {
+  grid-template-columns: 40% 60%;
+  position: relative;
+  bottom: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+#uploadDetails {
+  grid-template-columns: 90%;
+  grid-template-rows: 15% 25% 60%;
+  justify-content: center;
+}
+
+#uploadDetails > p {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#uploadDetails > form {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 90%;
+  grid-template-rows: 16% 16% 16% 16% 16%;
+  gap: 1em;
+}
+
+#uploadDetails > form > span {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  background: rgba(143, 189, 234, 0.37);
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+#uploadDetails > form > span > input, #uploadDetails > form > span > textarea {
+  border: 0;
+  background: transparent;
+  resize: none;
+}
+
+#uploadDetails > form > span > input {
+  height: 100%;
+}
+
+#uploadDetails > form > span > textarea::placeholder {
+  line-height: 3;
+}
+
+#uploadDetails > form > span > input:hover, #uploadDetails > form > span > textarea:hover {
+  border: 3px dashed rgba(0, 0, 0, 0.5);
+}
+
+#uploadDetails > form > span > #filterStrand, #uploadDetails > form > span > #filterYear {
+  grid-template-columns: 10% 90%;
+}
+
+#uploadDetails > form > span > #filterStrand > button, #uploadDetails > form > span > #filterYear > button {
+  border: 0;
+  font-size: medium;
+}
+
+#uploadDetails > form > span > #filterStrand > button:hover, #uploadDetails > form > span > #filterYear > button:hover {
+  background-color: #80B3D3;
+  height: 100%;
+}
+
+#uploadDetails > form > button {
+  background: #0B2447;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 400;
+  font-size: x-large;
+  height: 100%;
+  text-decoration: none;
+}
+
+#uploadDetails > form > button:hover {
+  background: #012F7D;
+}
+
+#uploadFile {
+  grid-template-columns: 60%;
+  grid-template-rows: 30% 50% 20%;
+  justify-content: center;
+  background: #80B3D3;
+  border-radius: 20px;
+}
+
+#uploadFile > label {
+  display: grid;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+#uploadFile > label > div {
+  grid-template-rows: 80% 20%;
+}
+
+#uploadFile > label:hover {
+  border: 5px dotted rgba(0, 0, 0, 0.5);
+}
+
+#uploadBtnImg {
+  background: url('./pages/backgrounds/image_2023-05-27_235641725-removebg-preview\ 4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#uploadFile > label > div > p {
+  font-size: xx-large;
+  text-align: center;
+  opacity: 0.5;
+}
+
+#uploadFile > p {
+  font-size: larger;
+  text-align: center;
+  opacity: 0.5;
+  user-select: none;
+}
+
+#uploadFile > label > div > p:hover {
+  opacity: 1;
+}
+
+/*Pdf Viewer*/
+
+#pdfViewer {
+  grid-template-columns: 85%;
+  grid-template-rows: 85% 85%;
+  justify-content: center;
+}
+
+#pdfViewer > div:nth-of-type(1) {
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.7;
+}
+
+#pdfContainer {
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  gap: 0 40px;
+  position: relative;
+  bottom: 100%;
+  padding: 20px 40px;
+  overflow: hidden;
+}
+
+#overviewPdf, #mainPdf {
+  position: relative;
+  transition: all 1s;
+}
+
+#overviewPdf, #mainPdf {grid-template-rows: 85% 15%;}
+
+#overviewPdfView, #overviewPdfButtons  {grid-template-columns: 40% 60%;}
+
+#overviewPdfView > .PDF {
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-right: 20px;
+  height: 60vh !important;
+  width: 100% !important;
+}
+
+#mainPdfView > div > .PDF {
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-right: 20px;
+}
+
+#pdfDetails {
+  grid-template-rows: 30% 15% 15% 15% 25%;
+  color: #fff;
+  margin-left: 40px;
+}
+
+#pdfDetails > h1 {
+  text-align: center;
+}
+
+#pdfDetails > span {
+  display: grid;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+#pdfDetails > span:hover {
+  background: #fff;
+  color: #000;
+  text-align: center;
+}
+
+#pdfViewButton {
+  grid-template-columns: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+#pdfViewButton > a {
+  display: grid;
+  align-items: center;
+  background: #0B2447;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: #fff !important;
+  height: 70%;
+  text-align: center;
+}
+
+#pdfViewButton > a:hover {
+  background: #fff;
+  color: #000 !important;
+} 
+
+#citationButton {
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  gap: 20px;
+}
+
+#citationFilter {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  height: 70%;
+}
+
+#citationFilter > button {
+  background: #0B2447;
+}
+
+#citationFilter > button:hover {
+  background: #fff;
+  color: #000;
+}
+
+#citationFilter > button:nth-of-type(1) {cursor: default;}
+
+#mainPdfView {
+  grid-template-columns: 3% 25% 44% 25% 3%;
+  justify-content: center;
+}
+
+#mainPdfView > div {cursor: pointer;}
+
+#mainPdfView > div:hover {background: rgba(0, 0, 0, 0.5);}
+
+#mainPdfView > div:nth-of-type(1) {
+  background-image: url('./pages/backgrounds/pngwing\ 7.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-left: 2px;
+}
+
+#mainPdfView > canvas {
+  margin: 0;
+}
+
+#mainPdfView > div:nth-of-type(2) {
+  background: transparent;
+  cursor: default;
+  overflow: scroll;
+}
+
+#mainPdfView > div:nth-of-type(3) {
+  background-image: url('./pages/backgrounds/pngwing\ 6.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-right: 2px;
+}
+
+#mainPdfButton {
+  grid-template-columns: 30% 30% 30%;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+}
+
+#mainPdfButton > a, #mainPdfButton > button {
+  display: grid;
+  align-items: center;
+  background: #0B2447;
+  font-size: larger;
+  height: 70%;
+  color: #fff !important;
+  text-align: center;
+}
+
+#mainPdfButton > a:hover {
+  background: #fff; 
+  color: #000 !important;
+}
+
+#zoom {
+  grid-template-columns: 40% 16% 40%;
+  gap: 0 10px;
+  height: 70%;
+}
+
+#zoom > span:nth-of-type(1) {background: url('./pages/backgrounds/pngtree-flat-magnifying-glass-image_1287467-removebg-preview.png');}
+
+#zoom > span:nth-of-type(2) {
+  display: grid; 
+  align-items: center;
+  color: #fff; 
+  font-size: larger;
+  font-weight: 700;
+  text-align: center;
+}
+
+#zoom > span:nth-of-type(3) {background: url('./pages/backgrounds/pngtree-zoom-in-icon-image_1287460-removebg-preview.png');}
+
+#zoom > span:nth-of-type(1), #zoom > span:nth-of-type(3) {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #0b2447e6;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#zoom > span:nth-of-type(1):hover, #zoom > span:nth-of-type(3):hover {
+  background-color: #ffffffd3;
+}
+
+.pdfView-ICT {background: #A4E27D;}
+
+.pdfView-ABM {background: #D064F6;}
+
+.pdfView-STEM {background: #FFCC58;}
+
+.pdfView-HUMMS {background: #E1CF8D;}
+
+.pdfView-CA {background: #FFBDBD;}
+
+.pdfView-TO {background: #F34343;}
+
+/*Dashboard*/
+
+#dashboard {
+  grid-template-columns: 85%;
+  grid-template-rows: 90% 90%;
+  justify-content: center;
+  align-items: center;
+}
+
+#dashboardSub {
+  background: linear-gradient(0deg, rgba(251, 230, 230, 0.2), rgba(251, 230, 230, 0.2)), #D9D9D9;
+  mix-blend-mode: luminosity;
+  box-shadow: 20px 20px 4px rgba(46, 33, 33, 0.27);
+  border-radius: 30px;
+  height: 100%;
+}
+
+#dashboardSub2 {
+  grid-template-rows: 10% 90%;
+  position: relative;
+  bottom: 100%;
+  height: 100%;
+  padding: 30px;
+}
+
+#dashboardSub2 > div {
+  grid-template-columns: 5% 40% 10% 40% 5%;
+  
+}
+
+#dashboardSub2 > div > h2 {
+  text-align: center;
+}
+
+#dashboardSub2 > div > div {
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  justify-content: center;
+  background: linear-gradient(180deg, #80B3D3 0%, rgba(128, 179, 211, 0) 100%);
+  border-radius: 20px;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(1) {
+  grid-template-columns: 20% 10% 20%;
+  grid-template-rows: 60%;
+  justify-content: center;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(1) > span {
+  position: relative;
+  top: 10px;
+  cursor: pointer;
+  height: 100%;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(1) > span:nth-of-type(2) {
+  color: #fff;
+  font-size: medium;
+  font-weight: 700;
+  text-align: center;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(2) {
+  grid-template-columns: 50%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  justify-content: center;
+  text-align: center;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(2) > div {
+  grid-template-rows: 60% 40%;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(2) > div > p {
+  display: grid;
+  align-items: center;
+  font-size: larger;
+  font-weight: 700;
+  margin: 0;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(2) > div > div {
+  grid-template-columns: 50%;
+  justify-content: center;
+}
+
+#dashboardSub2 > div > div:nth-of-type(1) > div:nth-of-type(2) > div > div > a {
+  display: grid;
+  align-items: center;
+  background: #0B2447;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: #fff !important;
+}
+
+#dashboardSub2 > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div > a {
+  display: grid;
+  align-items: center;
+  background: #A91717;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  color: #fff !important;
+}
+
+#dashboardSub2 > div > div > div:nth-of-type(2) > div > div > a:hover {
+  background: #fff;
+  color: #000 !important;
+}
+
+#dashBContents > div > div > span:nth-of-type(2) {
+  background: rgba(169, 197, 237, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+#dashBContents > div > div > span:nth-of-type(1) {background: url('./pages/backgrounds/pngwing\ 7.png');}
+
+#dashBContents > div > div > span:nth-of-type(3) {background: url('./pages/backgrounds/pngwing\ 6.png');}
+
+#dashBContents > div > div > span:nth-of-type(1), #dashBContents > div > div > span:nth-of-type(3) {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/*PdfViewAdmin*/
+
+#pdfView-Admin {
+  background: linear-gradient(0deg, rgba(251, 230, 230, 0.2), rgba(251, 230, 230, 0.2)), #D9D9D9;
+  mix-blend-mode: luminosity;
+  box-shadow: 20px 20px 4px rgba(46, 33, 33, 0.27);
+  border-radius: 30px;
+}
+
+#overviewPdfViewAdmin, #overviewPdfButtonsAdmin  {grid-template-columns: 60% 40%;}
+
+#overviewPdfViewAdmin > .PDF {
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  height: 60vh !important;
+  width: 100% !important;
+}
+
+#pdfDetailsAdmin {
+  grid-template-rows: 30% 15% 15% 15% 15% 10%;
+  color: #000;
+  margin-right: 40px;
+}
+
+#approveButtonAdmin {
+  grid-template-columns: 16% 60% 16%;
+  grid-template-rows: 90%;
+  align-items: center;
+  gap: 20px;
+}
+
+#approveReject {
+  grid-template-columns: 48% 48%;
+  grid-template-rows: 100% !important;
+  gap: 10px;
+  height: 80%;
+}
+
+#approveReject > button {
+  height: 100%;
+}
+
+#approveButtonAdmin > div {
+  grid-template-rows: 30% 60%;
+  align-items: center;
+}
+
+#approveButtonAdmin > div > div {
+  grid-template-columns: 48% 48%;
+  gap: 10px;
+  height: 80%;
+}
+
+#approveButtonAdmin > div > div > button {font-size: xx-large;}
+
+#approveButtonAdmin > div > div > button > a {color: #fff !important;}
+
+#delete {
+  display: grid;
+  align-items: center;
+  background: #20b8f9;
+  border-radius: 20px;
+  color: #014063 !important;
+  font-size: larger;
+  height: 70%;
+  text-align: center;
+}
+
+#delete:hover{background: #fff;}
+
+#assurance {grid-template-rows: 20% 70%; align-items: center;}
+
+#assurance > div {
+  grid-template-columns: 48% 48%;
+  gap: 20px;
+}
+
+.loadingSpin {
+  position: relative;
+  left: 7vw;
+  top: 5vh;
+}
+
+.loadingSpin2 {
+  position: relative;
+  left: 37vw;
+  top: 30vh;
+}
+
+.loadingSpin3 {
+  position: relative;
+  left: 16vw;
+  top: 12vh;
+}
+
+@keyframes preview {
+  0%{top: 100px; opacity: 0;}
+  100%{top: 30px; opacity: 1;}
+}
+
+@keyframes details {
+  0%{top: 100px; opacity: 0;}
+  100%{top: 0; opacity: 1;}
+}
