@@ -16,12 +16,12 @@ export const msalConfig = {
         // 'Application (client) ID' of app registration in Azure portal - this value is a GUID 
         // Client for production 92524fd1-f2d8-41bf-9879-23e70102a1a9
         // Client for localhost f9b1df0b-3b12-417f-aaa5-909a4143c7c4
-        clientId: "f9b1df0b-3b12-417f-aaa5-909a4143c7c4",
+        clientId: "92524fd1-f2d8-41bf-9879-23e70102a1a9",
         // Full directory URL, in the form of https://login.microsoftonline.com/<tenant-id>
         authority: "https://login.microsoftonline.com/487e0bf3-fdc1-415d-8a72-25aa9c755398",
         // Full redirect URL, in form of http://localhost:3000
         // Uri for production https://read-online-library.netlify.app
-        redirectUri: "http://localhost:3000",
+        redirectUri: "https://read-online-library.netlify.app",
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored
