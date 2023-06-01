@@ -59,9 +59,12 @@ a {
   #studentName {font-size: x-small !important;}
   #pdfCollection {grid-template-columns: 96% !important;}
   .title {font-size: large !important;}
+  #nav {grid-template-columns: 5% 65% 5% 25% !important;}
+  #studentName {font-size: 0 !important;}
+  #libraryLoginBg {grid-template-columns: 100% !important;}
 }
 
-/*Login*/
+/*Login /*  /index.html  200*/
 #LoginBg {
   grid-template-columns: 80%;
   grid-template-rows: 80% 80.6%;
